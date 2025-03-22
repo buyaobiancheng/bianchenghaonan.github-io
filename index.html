@@ -1,34 +1,111 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>My first sysle page</title>
-   <link rel="stylesheet" href="mystyle.css">
-  </head>
-  <body>
-    <!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a></li>
-  <li><a href="musings.html">Musings</a></li>
-  <li><a href="town.html">My town</a></li>
-  <li><a href="links.html">Links</a></li>
-</ul>
-
-<!-- Main content -->
-<h1>My first styled page</h1>
-
-<p>Welcome to my styled page!
-
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
-
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎新人!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #9fd771;
+            font-family: 'Arial', sans-serif;
+        }
+        .huanyingye mianrongqi {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+        .zuoshangjiao {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .huanyingwenben img {
+            height: 100vh;
+            width: 50vw;
+            object-fit: contain;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+        .huanyingyu img {
+            height: 7rem;
+            margin-top: 0.5rem;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+            opacity: 0;
+        }
+        #yuangongbianhao img {
+            position: absolute;
+            left: 2rem;
+            bottom: 2rem;
+            height: 6rem;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+            opacity: 0;
+        }
+        .youxiaojiao {
+            position: absolute;
+            right: 2rem;
+            bottom: 2rem;
+            text-align: right;
+            z-index: 1;
+        }
+        .dazhaohuwenben img {
+            height: 6rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+            opacity: 0;
+        }
+        .huanyingxiaoxi img {
+            height: 5rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
+            opacity: 0;
+        }
+        .gongsimingcheng img {
+            height: 26rem;
+            width: 46vw;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease forwards 1s;
+            opacity: 0;
+        }
+        .jixubutton img {
+            height: 2rem;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease forwards 1.2s;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="huanyingyemianrongqi">
+        <div class="zuoshangjiao">
+            <div class="huanyingwenben"><img src="1.png" alt="WELCOM"></div>
+        </div>
+        <div class="youxiaojiao">
+            <div class="gongsimingcheng"><img src="2.png" alt="青城文化传媒公司"></div>
+            <div class="jixubutton" onclick="window.location.href='main.html'">
+                <img src="button1.png" alt="CLICK TO CONTINUE">
+            </div>
+        </div>
+    </div>
+    <div></div>
+</body>
 </html>

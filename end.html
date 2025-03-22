@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成功</title>
+    <link rel="stylesheet" href="end.css">
+</head>
+
+<body>
+    <div id="username-display"></div>
+
+    <script>
+        const username = localStorage.getItem('username');
+        const usernameDisplay = document.getElementById('username-display');
+
+        if (username) {
+            usernameDisplay.textContent = `小小六级不在话下，天才英语歌手${username}！`;
+        }
+    </script>
+</body>
+
+</html>

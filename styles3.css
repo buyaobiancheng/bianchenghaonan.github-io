@@ -1,0 +1,57 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('9.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+#game-board {
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+   display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    color: #a0d875;
+}
+.card {
+    background-color: white;
+    border: none;
+    padding: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.card.selected {
+    background-color: #f9f0bf;
+    border: none;
+}
+.card.matched {
+    background-color: #b6b2b0;
+    border: none;
+    cursor: default;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+}

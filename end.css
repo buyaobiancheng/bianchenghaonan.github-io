@@ -1,0 +1,17 @@
+body {
+    background-image: url('end1.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#username-display {
+    color: #8b837a;
+    font-size: 30px;
+    text-align: center;
+}
+}

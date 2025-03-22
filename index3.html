@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六级单词英汉连连看</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+
+<body>
+    <div id="game-board"></div>
+    <script>
+        let cards = [];
+        // 存储当前选中的两张卡片
+        let selectedCards = [];
+        // 存储已经匹配成功的卡片对数
+        let matchedPairs = 0;
+
+        // 六级单词和中文释义的配对数组
+        const wordPairs = [
+            { english: "abandon", chinese: "放弃；遗弃" },
+            { english: "abnormal", chinese: "不正常的；反常的" },
+            { english: "abolish", chinese: "废除；取消" },
+            { english: "abrupt", chinese: "突然的；唐突的" },
+            { english: "absurd", chinese: "荒谬的；荒唐的" },
+            { english: "abundant", chinese: "丰富的；充裕的" },
+            { english: "accessory", chinese: "附件；配件；从犯" },
+            { english: "accommodate", chinese: "容纳；使适应；提供住宿" },
+            { english: "accompany", chinese: "陪伴；陪同；伴奏" },
+            { english: "accord", chinese: "使一致；给予；协议" }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('game-board').style.display = 'grid';
+
+            const allCards = [];
+            wordPairs.forEach(pair => {
+                allCards.push(pair.english);
+                allCards.push(pair.chinese);
+            });
+            allCards.sort(() => Math.random() - 0.5);
+
+            const gameBoard = document.getElementById('game-board');
+            allCards.forEach(cardText => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.textContent = cardText;
+                card.addEventListener('click', () => selectCard(card));
+                gameBoard.appendChild(card);
+                cards.push(card);
+            });
+        });
+
+        // 选择卡片的函数
+        function selectCard(card) {
+            if (selectedCards.length < 2 && !card.classList.contains('matched')) {
+                card.classList.add('selected');
+                selectedCards.push(card);
+
+                if (selectedCards.length === 2) {
+                    const isMatch = wordPairs.some(pair => {
+                        return (
+                            (selectedCards[0].textContent === pair.english && selectedCards[1].textContent === pair.chinese) ||
+                            (selectedCards[0].textContent === pair.chinese && selectedCards[1].textContent === pair.english)
+                        );
+                    });
+
+                    if (isMatch) {
+                        selectedCards.forEach(c => {
+                            c.classList.remove('selected');
+                            c.classList.add('matched');
+                        });
+                        matchedPairs++;
+                        if (matchedPairs === wordPairs.length) {
+                            // 跳转到下一个页面
+                            window.location.href = 'end.html';
+                        }
+                    } else {
+                        setTimeout(() => {
+                            selectedCards.forEach(c => {
+                                c.classList.remove('selected');
+                            });
+                        }, 500);
+                    }
+                    selectedCards = [];
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

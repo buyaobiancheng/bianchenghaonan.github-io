@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唱歌</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f9f0bf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .xiaoxirongqi {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .neirong {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .shangbutupian {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+        .zhutitupian {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+            opacity: 0;
+        }
+        .jixubutton {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 2;
+        }
+        .jixubutton img {
+            height: 2rem;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="xiaoxirongqi">
+        <div class="neirong">
+            <img src="10.png" alt="新爆炸框" class="shangbutupian">
+            <img src="11.png" alt="新提示语" class="zhutitupian">
+            <div class="jixubutton">
+                <img src="button3.png" alt="CLICK TO CONTINUE" id="jixubutton">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('jixubutton').addEventListener('click', function() {
+            window.location.href = 'index2.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background GIF with Animated Popup PNG</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="tanchuang">
+    <img src="7.png" alt="tanchuang Image">
+    </div>
+    <input type="text" class="usernameinput" placeholder="请输入你的艺名">
+    <button class="kaishibutton">点击开始一起英语连连看吧！</button>
+    <script>
+      const confirmButton = document.querySelector('.kaishibutton');
+      const usernameInput = document.querySelector('.usernameinput');
+      confirmButton.addEventListener('click', function () {
+            const username = usernameInput.value;
+            localStorage.setItem('username', username);
+            window.location.href = 'index3.html';
+    });
+    </script>
+</body>
+</html>
